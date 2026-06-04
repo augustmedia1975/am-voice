@@ -84,7 +84,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-yellow/20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-mono text-xs text-warm-gray/40">© {new Date().getFullYear()} AM Studio. All rights reserved.</p>
-          <p className="font-mono text-xs text-warm-gray/40">New York City</p>
+          <p className="font-mono text-xs text-warm-gray/40">New Orleans</p>
         </div>
       </div>
     </footer>

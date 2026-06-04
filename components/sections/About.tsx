@@ -27,7 +27,7 @@ export default function About() {
                 What sets AM apart isn&apos;t just technical precision — it&apos;s the ability to find the emotional heartbeat of a script. Whether the brief calls for authority or intimacy, urgency or warmth, the performance arrives fully inhabited. Not performed. Lived.
               </p>
               <p>
-                Based in New York City with a professional home studio, AM collaborates with publishers, ad agencies, game studios, and independent authors worldwide — delivering broadcast-ready audio, on time, every time.
+                Based in New Orleans with a professional home studio, AM collaborates with publishers, ad agencies, game studios, and independent authors worldwide — delivering broadcast-ready audio, on time, every time.
               </p>
             </div>
 

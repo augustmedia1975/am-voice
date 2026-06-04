@@ -41,7 +41,7 @@ export default function ContactCTA() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center font-mono text-xs text-warm-gray/60">
           <span>hello@amstudio.io</span>
           <span className="hidden sm:block text-yellow">·</span>
-          <span>New York City</span>
+          <span>New Orleans</span>
           <span className="hidden sm:block text-yellow">·</span>
           <span className="flex items-center gap-2">
             <span className="w-2 h-2 bg-yellow rounded-full animate-pulse" />
