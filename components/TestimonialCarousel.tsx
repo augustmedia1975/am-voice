@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     company: 'Meridian Publishing',
   },
   {
-    quote: "We needed a voice that felt cinematic yet intimate for a global brand campaign. AM delivered something that stopped us mid-playback. That warmth is impossible to manufacture.",
+    quote: "We needed a voice that felt cinematic yet intimate for a global brand campaign. Adam delivered something that stopped us mid-playback. That warmth is impossible to manufacture.",
     name: 'David Huang',
     company: 'Apex Creative Studio',
   },
