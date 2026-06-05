@@ -24,10 +24,10 @@ export default function About() {
                 With over a decade behind the microphone, Adam Roussell has lent voice to more than two hundred audiobooks, countless brand campaigns, and the kind of trailer reads that make audiences lean forward. The journey spans literary fiction and corporate boardrooms, animated characters and documentary whispers.
               </p>
               <p>
-                What sets AM apart isn&apos;t just technical precision — it&apos;s the ability to find the emotional heartbeat of a script. Whether the brief calls for authority or intimacy, urgency or warmth, the performance arrives fully inhabited. Not performed. Lived.
+                What sets Adam apart isn&apos;t just technical precision — it&apos;s the ability to find the emotional heartbeat of a script. Whether the brief calls for authority or intimacy, urgency or warmth, the performance arrives fully inhabited. Not performed. Lived.
               </p>
               <p>
-                Based in New Orleans with a professional home studio, AM collaborates with publishers, ad agencies, game studios, and independent authors worldwide — delivering broadcast-ready audio, on time, every time.
+                Based in New Orleans with a professional home studio, Adam collaborates with publishers, ad agencies, game studios, and independent authors worldwide — delivering broadcast-ready audio, on time, every time.
               </p>
             </div>
 
