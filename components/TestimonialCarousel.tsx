@@ -19,7 +19,7 @@ const TESTIMONIALS = [
     company: 'Northlight Productions',
   },
   {
-    quote: "Working with AM felt less like a recording session and more like a collaboration. They elevated the script beyond what we wrote. The e-learning engagement rates haven't been the same since.",
+    quote: "Working with Adam felt less like a recording session and more like a collaboration. They elevated the script beyond what we wrote. The e-learning engagement rates haven't been the same since.",
     name: 'Marcus Webb',
     company: 'Torchlight Learning',
   },
