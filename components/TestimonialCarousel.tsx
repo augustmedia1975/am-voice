@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 const TESTIMONIALS = [
   {
-    quote: "Adam Roussell doesn't just read words — they inhabit them. Our audiobook climbed the charts within a week of release, and listener reviews kept mentioning the narration. That never happens.",
+    quote: "Adam Roussell doesn't just read words — he inhabits them. Our audiobook climbed the charts within a week of release, and listener reviews kept mentioning the narration. That never happens.",
     name: 'Rachel Okoye',
     company: 'Meridian Publishing',
   },
