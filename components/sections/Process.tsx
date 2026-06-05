@@ -1,5 +1,5 @@
 const STEPS = [
-  { num: '01', title: 'Project Brief', desc: 'We start with a conversation. Tell us the story, the audience, the feeling. The more I understand your vision, the more precisely I can serve it.' },
+  { num: '01', title: 'Project Brief', desc: 'We start with a conversation. Tell me the story, the audience, the feeling. The more I understand your vision, the more precisely I can serve it.' },
   { num: '02', title: 'Voice Direction', desc: 'You share reference tracks, character breakdowns, or a simple style note. I translate direction into performance choices before a single second is recorded.' },
   { num: '03', title: 'Studio Recording', desc: 'Captured in a professional-grade home studio with broadcast-quality equipment. Clean, dry audio — ready for your post team or delivered fully mixed.' },
   { num: '04', title: 'Final Delivery', desc: 'Files your way: WAV, AIFF, MP3, chapter-split or continuous. Revision rounds included. On-time. Every time. No exceptions.' },
