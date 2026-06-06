@@ -156,7 +156,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-mono text-xs text-yellow/60 tracking-widest mb-1">LOCATION</p>
-                    <p>New Orleans, EST</p>
+                    <p>New Orleans, LA</p>
                   </div>
                   <div>
                     <p className="font-mono text-xs text-yellow/60 tracking-widest mb-1">AVAILABILITY</p>
