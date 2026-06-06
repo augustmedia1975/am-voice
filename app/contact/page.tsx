@@ -152,7 +152,7 @@ export default function ContactPage() {
                 <div className="space-y-4 font-body text-sm text-warm-gray">
                   <div>
                     <p className="font-mono text-xs text-yellow/60 tracking-widest mb-1">RESPONSE TIME</p>
-                    <p>Within 24 hours, Mon – Fri</p>
+                    <p>Within 24 hours, 7 days a week</p>
                   </div>
                   <div>
                     <p className="font-mono text-xs text-yellow/60 tracking-widest mb-1">LOCATION</p>
