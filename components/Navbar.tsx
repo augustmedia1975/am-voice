@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { label: 'Work', href: '/audiobooks' },
   { label: 'Voices', href: '/demos' },
   { label: 'Reel', href: '/#reel' },
-  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
