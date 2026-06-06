@@ -67,10 +67,6 @@ export default function About() {
               </div>
             </div>
 
-            {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 bg-black text-white font-body text-xs font-bold px-4 py-2 rounded-full shadow-xl">
-              SAG-AFTRA Member
-            </div>
           </div>
         </div>
       </div>
