@@ -47,7 +47,7 @@ export default function Navbar() {
             href="/contact"
             className="font-body text-sm font-bold bg-yellow text-black px-6 py-2.5 rounded-full hover:bg-yellow/90 transition-colors"
           >
-            Book a Session
+            Contact
           </Link>
         </nav>
 
@@ -83,7 +83,7 @@ export default function Navbar() {
             className="font-body text-sm font-bold bg-yellow text-black px-6 py-3 rounded-full text-center"
             onClick={() => setMenuOpen(false)}
           >
-            Book a Session
+            Contact
           </Link>
         </div>
       )}
