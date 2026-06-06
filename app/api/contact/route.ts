@@ -11,6 +11,7 @@ export async function POST(request: Request) {
       from: 'AM Studio Contact <adam@augustmediastudio.com>',
       to: 'adam@augustmediastudio.com',
       replyTo: email,
+      bcc: 'augustmedia1975@gmail.com',
       subject: `New enquiry from ${name} — ${projectType}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
