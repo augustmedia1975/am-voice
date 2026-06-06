@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Footer from '@/components/Footer';
 
 const PROJECT_TYPES = [
@@ -25,13 +25,37 @@ const BUDGET_RANGES = [
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1500));
-    setLoading(false);
-    setSubmitted(true);
+    setError('');
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      projectType: (form.elements.namedItem('projectType') as HTMLSelectElement).value,
+      budget: (form.elements.namedItem('budget') as HTMLSelectElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error('Failed to send');
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please try again or email adam@augustmediastudio.com directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -57,12 +81,13 @@ export default function ContactPage() {
                   <p className="font-body text-warm-gray">I&apos;ll be in touch within 24 hours. Looking forward to it.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label className="font-mono text-xs text-warm-gray/60 tracking-widest block mb-2">NAME</label>
                       <input
                         type="text"
+                        name="name"
                         required
                         className="w-full bg-deep border border-white/10 rounded-xl px-5 py-4 text-cream font-body text-sm focus:outline-none focus:border-yellow/50 transition-colors"
                         placeholder="Your name"
@@ -72,6 +97,7 @@ export default function ContactPage() {
                       <label className="font-mono text-xs text-warm-gray/60 tracking-widest block mb-2">EMAIL</label>
                       <input
                         type="email"
+                        name="email"
                         required
                         className="w-full bg-deep border border-white/10 rounded-xl px-5 py-4 text-cream font-body text-sm focus:outline-none focus:border-yellow/50 transition-colors"
                         placeholder="your@email.com"
@@ -83,6 +109,7 @@ export default function ContactPage() {
                     <label className="font-mono text-xs text-warm-gray/60 tracking-widest block mb-2">PROJECT TYPE</label>
                     <div className="relative">
                       <select
+                        name="projectType"
                         required
                         className="w-full appearance-none bg-deep border border-white/10 rounded-xl px-5 py-4 text-cream font-body text-sm focus:outline-none focus:border-yellow/50 transition-colors"
                         defaultValue=""
@@ -102,6 +129,7 @@ export default function ContactPage() {
                     <label className="font-mono text-xs text-warm-gray/60 tracking-widest block mb-2">BUDGET RANGE</label>
                     <div className="relative">
                       <select
+                        name="budget"
                         className="w-full appearance-none bg-deep border border-white/10 rounded-xl px-5 py-4 text-cream font-body text-sm focus:outline-none focus:border-yellow/50 transition-colors"
                         defaultValue=""
                       >
@@ -119,12 +147,17 @@ export default function ContactPage() {
                   <div>
                     <label className="font-mono text-xs text-warm-gray/60 tracking-widest block mb-2">MESSAGE</label>
                     <textarea
+                      name="message"
                       required
                       rows={6}
                       className="w-full bg-deep border border-white/10 rounded-xl px-5 py-4 text-cream font-body text-sm focus:outline-none focus:border-yellow/50 transition-colors resize-none"
                       placeholder="Tell me about the project — the story, the tone, the deadline. The more detail, the better."
                     />
                   </div>
+
+                  {error && (
+                    <p className="text-red-400 font-body text-sm">{error}</p>
+                  )}
 
                   <button
                     type="submit"
