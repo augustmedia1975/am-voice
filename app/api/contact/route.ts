@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const { name, email, projectType, budget, message } = await request.json();
 
     await resend.emails.send({
-      from: 'AM Studio Contact <onboarding@resend.dev>',
+      from: 'AM Studio Contact <adam@augustmediastudio.com>',
       to: 'adam@augustmediastudio.com',
       replyTo: email,
       subject: `New enquiry from ${name} — ${projectType}`,
