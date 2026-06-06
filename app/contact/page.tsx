@@ -78,7 +78,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <h3 className="font-display text-2xl text-cream mb-3">Message Received</h3>
-                  <p className="font-body text-warm-gray">I&apos;ll be in touch within 24 hours. Looking forward to working with you!</p>
+                  <p className="font-body text-warm-gray">I&apos;ll be in touch within 24 hours. Looking forward to working with you.</p>
                 </div>
               ) : (
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
