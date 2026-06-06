@@ -176,7 +176,7 @@ export default function ContactPage() {
                 <h3 className="font-display text-xl text-cream mb-4">Studio Specs</h3>
                 <ul className="space-y-2 font-body text-sm text-warm-gray">
                   {[
-                    'Neumann U87 / Shure SM7B',
+                    'Rode NT1',
                     'Universal Audio Apollo interface',
                     'Fully treated isolation booth',
                     'Adobe Audition / Pro Tools capable',
