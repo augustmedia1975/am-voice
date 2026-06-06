@@ -177,7 +177,7 @@ export default function ContactPage() {
                 <ul className="space-y-2 font-body text-sm text-warm-gray">
                   {[
                     'Rode NT1',
-                    'Universal Audio Apollo interface',
+                    'Focusrite Scarlett Audio Interface',
                     'Fully treated isolation booth',
                     'Adobe Audition / Pro Tools capable',
                     'Source-Connect & ipDTL ready',
