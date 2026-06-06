@@ -180,7 +180,6 @@ export default function ContactPage() {
                     'Focusrite Scarlett Audio Interface',
                     'Fully treated isolation booth',
                     'Adobe Audition',
-                    'Source-Connect & ipDTL ready',
                     'Deliverables: WAV, AIFF, MP3',
                   ].map(spec => (
                     <li key={spec} className="flex items-center gap-2">
