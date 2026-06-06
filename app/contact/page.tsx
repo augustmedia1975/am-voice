@@ -179,7 +179,7 @@ export default function ContactPage() {
                     'Rode NT1',
                     'Focusrite Scarlett Audio Interface',
                     'Fully treated isolation booth',
-                    'Adobe Audition / Pro Tools capable',
+                    'Adobe Audition',
                     'Source-Connect & ipDTL ready',
                     'Deliverables: WAV, AIFF, MP3',
                   ].map(spec => (
