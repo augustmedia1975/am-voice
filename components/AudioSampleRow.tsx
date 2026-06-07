@@ -10,17 +10,48 @@ interface AudioSampleRowProps {
   activeSampleId: string | null;
 }
 
+function formatTime(seconds: number) {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
 export default function AudioSampleRow({ sample, onPlay, activeSampleId }: AudioSampleRowProps) {
   const isActive = activeSampleId === sample.id;
   const [playing, setPlaying] = useState(false);
+  const [remaining, setRemaining] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     if (!isActive && playing) {
       audioRef.current?.pause();
       setPlaying(false);
+      setRemaining(null);
     }
   }, [isActive, playing]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const onTimeUpdate = () => {
+      if (audio.duration) {
+        setRemaining(formatTime(audio.duration - audio.currentTime));
+      }
+    };
+
+    const onEnded = () => {
+      setPlaying(false);
+      setRemaining(null);
+    };
+
+    audio.addEventListener('timeupdate', onTimeUpdate);
+    audio.addEventListener('ended', onEnded);
+    return () => {
+      audio.removeEventListener('timeupdate', onTimeUpdate);
+      audio.removeEventListener('ended', onEnded);
+    };
+  }, []);
 
   const toggle = () => {
     if (!isActive) {
@@ -64,7 +95,9 @@ export default function AudioSampleRow({ sample, onPlay, activeSampleId }: Audio
 
       {/* Duration + play */}
       <div className="flex items-center gap-4 flex-shrink-0">
-        <span className="font-mono text-xs text-warm-gray hidden sm:block">{sample.duration}</span>
+        <span className="font-mono text-xs text-warm-gray hidden sm:block">
+          {isActive && playing && remaining ? `-${remaining}` : sample.duration}
+        </span>
         <button
           onClick={toggle}
           className="w-10 h-10 rounded-full bg-yellow flex items-center justify-center hover:scale-110 transition-transform"
