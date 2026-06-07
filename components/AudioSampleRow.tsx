@@ -26,6 +26,9 @@ export default function AudioSampleRow({ sample, onPlay, activeSampleId }: Audio
     if (!isActive) {
       onPlay(sample.id);
       setPlaying(true);
+      setTimeout(() => {
+        audioRef.current?.play();
+      }, 50);
       return;
     }
     if (playing) {
