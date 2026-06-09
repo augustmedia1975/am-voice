@@ -80,7 +80,7 @@ export default function Hero() {
 
         {/* Audio Player Card */}
         <div className="flex justify-center lg:justify-end">
-          <AudioPlayer src="/audio/great-plains-wonders.mp3" label="Sample Reel — 2025" />
+          <AudioPlayer src="/audio/great-plains-wonders.mp3" label="Sample of the Week" />
         </div>
       </div>
     </section>
