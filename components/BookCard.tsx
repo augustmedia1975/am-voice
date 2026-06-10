@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useRef, useState } from 'react';
 import { AudioBook } from '@/lib/booksData';
 
 interface BookCardProps {
@@ -8,8 +9,30 @@ interface BookCardProps {
 }
 
 export default function BookCard({ book }: BookCardProps) {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (playing) {
+      audioRef.current.pause();
+      setPlaying(false);
+    } else {
+      audioRef.current.play();
+      setPlaying(true);
+    }
+  };
+
   return (
     <div className="group relative">
+      {book.audio && (
+        <audio
+          ref={audioRef}
+          src={book.audio}
+          onEnded={() => setPlaying(false)}
+        />
+      )}
+
       {/* Cover */}
       <div
         className="relative aspect-[2/3] rounded-xl overflow-hidden mb-4 transition-transform duration-500 group-hover:[transform:perspective(800px)_rotateY(-8deg)]"
@@ -48,10 +71,21 @@ export default function BookCard({ book }: BookCardProps) {
         )}
         {/* Play overlay */}
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-          <button className="w-12 h-12 bg-yellow rounded-full flex items-center justify-center">
-            <svg className="w-4 h-4 ml-0.5" fill="#0D0D0D" viewBox="0 0 24 24">
-              <polygon points="5,3 19,12 5,21" />
-            </svg>
+          <button
+            onClick={book.audio ? togglePlay : undefined}
+            className="w-12 h-12 bg-yellow rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+            aria-label={playing ? 'Pause' : 'Play'}
+          >
+            {playing ? (
+              <svg className="w-4 h-4" fill="#0D0D0D" viewBox="0 0 24 24">
+                <rect x="6" y="4" width="4" height="16" />
+                <rect x="14" y="4" width="4" height="16" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4 ml-0.5" fill="#0D0D0D" viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
