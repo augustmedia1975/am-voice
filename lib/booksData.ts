@@ -5,11 +5,12 @@ export interface AudioBook {
   genre: string;
   runtime: string;
   color: string;
+  image?: string;
   current?: boolean;
 }
 
 export const AUDIOBOOKS: AudioBook[] = [
-  { id: '1', title: 'The Atlas of Lost Things', author: 'Miranda Cole', genre: 'Fiction', runtime: '11h 22m', color: '#2A1F3D' },
+  { id: '1', title: 'The Atlas of Lost Things', author: 'Miranda Cole', genre: 'Fiction', runtime: '11h 22m', color: '#2A1F3D', image: '/images/atlas-cover.jpg' },
   { id: '2', title: 'Beneath the Iron Sky', author: 'James Harrow', genre: 'Thriller', runtime: '9h 04m', color: '#1A2A1A' },
   { id: '3', title: 'The Quiet Revolution', author: 'Dr. Priya Sharma', genre: 'Non-Fiction', runtime: '7h 38m', color: '#2A1A10' },
   { id: '4', title: 'Echoes of the Meridian', author: 'Lena Voss', genre: 'Sci-Fi', runtime: '14h 52m', color: '#0D1A2A' },

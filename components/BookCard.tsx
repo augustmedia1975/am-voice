@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { AudioBook } from '@/lib/booksData';
 
 interface BookCardProps {
@@ -14,6 +15,16 @@ export default function BookCard({ book }: BookCardProps) {
         className="relative aspect-[2/3] rounded-xl overflow-hidden mb-4 transition-transform duration-500 group-hover:[transform:perspective(800px)_rotateY(-8deg)]"
         style={{ backgroundColor: book.color }}
       >
+        {/* Cover image */}
+        {book.image && (
+          <Image
+            src={book.image}
+            alt={book.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 50vw, 20vw"
+          />
+        )}
         {/* Grain texture */}
         <div
           className="absolute inset-0 opacity-30"
