@@ -58,8 +58,8 @@ export default function BookCard({ book }: BookCardProps) {
 
       {/* Info */}
       <div>
-        {!book.image && <p className="font-body font-bold text-cream text-sm truncate">{book.title}</p>}
-        {!book.image && <p className="font-body text-warm-gray text-xs">{book.author}</p>}
+        <p className="font-body font-bold text-cream text-sm truncate">{book.title}</p>
+        <p className="font-body text-warm-gray text-xs">{book.author}</p>
         <div className="flex items-center gap-2 mt-2">
           <span className="font-mono text-[10px] bg-yellow/10 text-yellow px-2 py-0.5 rounded-full">{book.genre}</span>
           <span className="font-mono text-[10px] text-warm-gray/60">{book.runtime}</span>
