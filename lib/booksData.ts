@@ -12,7 +12,7 @@ export interface AudioBook {
 
 export const AUDIOBOOKS: AudioBook[] = [
   { id: '1', title: 'Aṣísẹhìndé', author: 'Gbadebo Babsalaam & Oluwaseun Babsalaam', genre: 'Fiction', runtime: '2.8h', color: '#2A1F3D', image: '/images/atlas-cover.jpg', audio: '/audio/asisehinde-sample.mp3' },
-  { id: '2', title: 'The Psychology of Insurance', author: 'James Harrow', genre: 'Thriller', runtime: '9h 04m', color: '#1A2A1A', image: '/images/psychology-of-insurance.jpg' },
+  { id: '2', title: 'The Psychology of Insurance', author: 'Karman Jones', genre: 'Thriller', runtime: '9h 04m', color: '#1A2A1A', image: '/images/psychology-of-insurance.jpg' },
   { id: '3', title: 'The Quiet Revolution', author: 'Dr. Priya Sharma', genre: 'Non-Fiction', runtime: '7h 38m', color: '#2A1A10' },
   { id: '4', title: 'Echoes of the Meridian', author: 'Lena Voss', genre: 'Sci-Fi', runtime: '14h 52m', color: '#0D1A2A' },
   { id: '5', title: 'Root & Ruin', author: 'T. Beaumont', genre: 'Fiction', runtime: '8h 17m', color: '#1A1A2A' },
