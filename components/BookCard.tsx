@@ -32,11 +32,13 @@ export default function BookCard({ book }: BookCardProps) {
             backgroundImage: `radial-gradient(ellipse at top, rgba(255,255,255,0.08) 0%, transparent 70%)`,
           }}
         />
-        {/* Title overlay */}
-        <div className="absolute inset-0 flex flex-col justify-end p-4">
-          <p className="font-display text-cream text-base font-bold leading-tight">{book.title}</p>
-          <p className="font-body text-warm-gray text-xs mt-1">{book.author}</p>
-        </div>
+        {/* Title overlay — only shown when no cover image */}
+        {!book.image && (
+          <div className="absolute inset-0 flex flex-col justify-end p-4">
+            <p className="font-display text-cream text-base font-bold leading-tight">{book.title}</p>
+            <p className="font-body text-warm-gray text-xs mt-1">{book.author}</p>
+          </div>
+        )}
         {/* Currently recording badge */}
         {book.current && (
           <div className="absolute top-3 right-3 bg-yellow text-black font-mono text-[9px] font-bold px-2 py-1 rounded-full flex items-center gap-1">
@@ -56,8 +58,8 @@ export default function BookCard({ book }: BookCardProps) {
 
       {/* Info */}
       <div>
-        <p className="font-body font-bold text-cream text-sm truncate">{book.title}</p>
-        <p className="font-body text-warm-gray text-xs">{book.author}</p>
+        {!book.image && <p className="font-body font-bold text-cream text-sm truncate">{book.title}</p>}
+        {!book.image && <p className="font-body text-warm-gray text-xs">{book.author}</p>}
         <div className="flex items-center gap-2 mt-2">
           <span className="font-mono text-[10px] bg-yellow/10 text-yellow px-2 py-0.5 rounded-full">{book.genre}</span>
           <span className="font-mono text-[10px] text-warm-gray/60">{book.runtime}</span>
