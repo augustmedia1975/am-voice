@@ -14,7 +14,7 @@ export const AUDIOBOOKS: AudioBook[] = [
   { id: '1', title: 'Aṣísẹhìndé', author: 'Gbadebo Babsalaam & Oluwaseun Babsalaam', genre: 'Fiction', runtime: '2.8h', color: '#2A1F3D', image: '/images/atlas-cover.jpg', audio: '/audio/asisehinde-sample.mp3' },
   { id: '2', title: 'The Psychology of Insurance', author: 'Karman Jones', genre: 'Business', runtime: '3.8h', color: '#1A2A1A', image: '/images/psychology-of-insurance.jpg', audio: '/audio/psychology-of-insurance-sample.mp3' },
   { id: '3', title: 'Regime Machine', author: 'James Johnson', genre: 'Non-Fiction', runtime: '2.2h', color: '#2A1A10', image: '/images/regime-machine.jpg', audio: '/audio/regime-machine-sample.mp3' },
-  { id: '4', title: "The People's Law Book", author: 'Robert C. Griffin', genre: 'Non-Fiction', runtime: '14h 52m', color: '#0D1A2A', image: '/images/peoples-law-book.jpg' },
+  { id: '4', title: "The People's Law Book", author: 'Robert C. Griffin', genre: 'Non-Fiction', runtime: '1.6h', color: '#0D1A2A', image: '/images/peoples-law-book.jpg' },
   { id: '5', title: 'Root & Ruin', author: 'T. Beaumont', genre: 'Fiction', runtime: '8h 17m', color: '#1A1A2A' },
   { id: '6', title: 'The Art of Deep Work', author: 'Samuel Okafor', genre: 'Business', runtime: '5h 44m', color: '#1A2A20' },
   { id: '7', title: 'Velvet Conspiracy', author: 'Claudia Reeve', genre: 'Thriller', runtime: '10h 30m', color: '#2A1A1A' },
