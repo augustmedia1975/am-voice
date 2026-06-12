@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function About() {
   return (
     <section className="relative bg-cream clip-diagonal-reverse py-32 overflow-hidden">
@@ -54,17 +56,14 @@ export default function About() {
                 boxShadow: '8px 8px 0px #F5C800',
               }}
             >
-              {/* Grain */}
-              <div
-                className="absolute inset-0 opacity-20"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 30% 30%, rgba(245,200,0,0.15) 0%, transparent 60%)`,
-                }}
+              <Image
+                src="/images/adam-portrait.jpg"
+                alt="Adam Roussell"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 45vw"
+                priority
               />
-              {/* Placeholder text */}
-              <div className="absolute inset-0 flex items-end p-8">
-                <p className="font-editorial italic text-warm-gray/40 text-sm">Portrait Placeholder</p>
-              </div>
             </div>
 
           </div>
