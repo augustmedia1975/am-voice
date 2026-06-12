@@ -60,7 +60,7 @@ export default function About() {
                 src="/images/adam-portrait.jpg"
                 alt="Adam Roussell"
                 fill
-                className="object-cover"
+                className="object-cover grayscale"
                 sizes="(max-width: 768px) 100vw, 45vw"
                 priority
               />
