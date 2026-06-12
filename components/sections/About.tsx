@@ -60,7 +60,8 @@ export default function About() {
                 src="/images/adam-portrait.jpg"
                 alt="Adam Roussell"
                 fill
-                className="object-cover grayscale"
+                className="object-cover"
+                style={{ filter: 'grayscale(100%) contrast(1.2) brightness(0.85) sepia(20%)' }}
                 sizes="(max-width: 768px) 100vw, 45vw"
                 priority
               />
