@@ -61,7 +61,7 @@ export default function About() {
                 alt="Adam Roussell"
                 fill
                 className="object-cover"
-                style={{ filter: 'grayscale(100%) brightness(0.65) contrast(1.4) sepia(15%)' }}
+                style={{ filter: 'grayscale(40%) contrast(0.85) brightness(1.1) saturate(0.7)' }}
                 sizes="(max-width: 768px) 100vw, 45vw"
                 priority
               />
