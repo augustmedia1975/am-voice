@@ -2,27 +2,32 @@ export interface AudioBook {
   id: string;
   title: string;
   author: string;
-  genre: string;
+  /** One or more genres. The first is shown as the primary tag on the card. */
+  genre: string[];
   runtime: string;
   color: string;
+  /**
+   * Date the title was added, as 'YYYY-MM-DD'. Used only for ordering the
+   * catalog (newest first) — it is never displayed on the site. When adding a
+   * new title, set this to its release/added date; placement in the array
+   * below does not matter, the list is sorted by this field automatically.
+   */
+  dateAdded: string;
   image?: string;
   audio?: string;
   current?: boolean;
 }
 
-export const AUDIOBOOKS: AudioBook[] = [
-  { id: '1', title: 'Aṣísẹhìndé', author: 'Gbadebo Babsalaam & Oluwaseun Babsalaam', genre: 'Fiction', runtime: '2.8h', color: '#2A1F3D', image: '/images/atlas-cover.jpg', audio: '/audio/asisehinde-sample.mp3' },
-  { id: '2', title: 'The Psychology of Insurance', author: 'Karman Jones', genre: 'Business', runtime: '3.8h', color: '#1A2A1A', image: '/images/psychology-of-insurance.jpg', audio: '/audio/psychology-of-insurance-sample.mp3' },
-  { id: '3', title: 'Regime Machine', author: 'James Johnson', genre: 'Non-Fiction', runtime: '2.2h', color: '#2A1A10', image: '/images/regime-machine.jpg', audio: '/audio/regime-machine-sample.mp3' },
-  { id: '4', title: "The People's Law Book", author: 'Robert C. Griffin', genre: 'Self-Help', runtime: '1.6h', color: '#0D1A2A', image: '/images/peoples-law-book.jpg', audio: '/audio/peoples-law-book-sample.mp3' },
-  { id: '5', title: 'Waiting to Die', author: 'Feltus Taylor, Jr., Edited By Monique Morrison', genre: 'Non-Fiction', runtime: '11h', color: '#1A1A2A', image: '/images/waiting-to-die.jpg', audio: '/audio/waiting-to-die-sample.wav' },
-  { id: '6', title: 'The Art of Deep Work', author: 'Samuel Okafor', genre: 'Business', runtime: '5h 44m', color: '#1A2A20' },
-  { id: '7', title: 'Velvet Conspiracy', author: 'Claudia Reeve', genre: 'Thriller', runtime: '10h 30m', color: '#2A1A1A' },
-  { id: '8', title: 'Mindful Momentum', author: 'Dr. Aisha Wells', genre: 'Self-Help', runtime: '6h 12m', color: '#1A2010' },
-  { id: '9', title: 'The Last Cartographer', author: 'Felix Strand', genre: 'Fiction', runtime: '12h 08m', color: '#10202A' },
-  { id: '10', title: 'Broken Circuits', author: 'Yuki Tanaka', genre: 'Sci-Fi', runtime: '9h 55m', color: '#201020' },
-  { id: '11', title: 'Empire of Dust', author: 'M. Oyelaran', genre: 'Non-Fiction', runtime: '8h 33m', color: '#2A1810' },
-  { id: '12', title: 'The Tender Hours', author: 'Rose Calloway', genre: 'Fiction', runtime: '7h 20m', color: '#1A1020', current: true },
-  { id: '13', title: 'Sovereign Mind', author: 'Calvin Reed', genre: 'Self-Help', runtime: '5h 58m', color: '#102020', current: true },
-  { id: '14', title: 'Glass Meridian', author: 'Dana Frost', genre: 'Thriller', runtime: '11h 44m', color: '#20101A' },
+const books: AudioBook[] = [
+  { id: '6', title: 'The Listeners', author: 'Kurt Dawson', genre: ['Thriller', 'Sci-Fi'], runtime: '2.5h', color: '#10171F', dateAdded: '2026-06-28', image: '/images/the-listeners.png', current: true },
+  { id: '5', title: 'Waiting to Die', author: 'Feltus Taylor, Jr., Edited By Monique Morrison', genre: ['Non-Fiction'], runtime: '11h', color: '#1A1A2A', dateAdded: '2026-06-01', image: '/images/waiting-to-die.jpg', audio: '/audio/waiting-to-die-sample.wav' },
+  { id: '4', title: "The People's Law Book", author: 'Robert C. Griffin', genre: ['Self-Help'], runtime: '1.6h', color: '#0D1A2A', dateAdded: '2026-05-01', image: '/images/peoples-law-book.jpg', audio: '/audio/peoples-law-book-sample.mp3' },
+  { id: '3', title: 'Regime Machine', author: 'James Johnson', genre: ['Non-Fiction'], runtime: '2.2h', color: '#2A1A10', dateAdded: '2026-04-01', image: '/images/regime-machine.jpg', audio: '/audio/regime-machine-sample.mp3' },
+  { id: '2', title: 'The Psychology of Insurance', author: 'Karman Jones', genre: ['Business'], runtime: '3.8h', color: '#1A2A1A', dateAdded: '2026-02-01', image: '/images/psychology-of-insurance.jpg', audio: '/audio/psychology-of-insurance-sample.mp3' },
+  { id: '1', title: 'Aṣísẹhìndé', author: 'Gbadebo Babsalaam & Oluwaseun Babsalaam', genre: ['Fiction'], runtime: '2.8h', color: '#2A1F3D', dateAdded: '2026-03-01', image: '/images/atlas-cover.jpg', audio: '/audio/asisehinde-sample.mp3' },
 ];
+
+// Newest first. New titles can be added anywhere above; they sort by dateAdded.
+export const AUDIOBOOKS: AudioBook[] = [...books].sort(
+  (a, b) => b.dateAdded.localeCompare(a.dateAdded)
+);

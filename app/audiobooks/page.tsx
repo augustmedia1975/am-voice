@@ -12,7 +12,7 @@ export default function AudiobooksPage() {
 
   const filtered = activeGenre === 'All'
     ? AUDIOBOOKS
-    : AUDIOBOOKS.filter(b => b.genre === activeGenre);
+    : AUDIOBOOKS.filter(b => b.genre.includes(activeGenre));
 
   return (
     <>

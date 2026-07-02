@@ -64,8 +64,8 @@ export default function BookCard({ book }: BookCardProps) {
         )}
         {/* Currently recording badge */}
         {book.current && (
-          <div className="absolute top-3 right-3 bg-yellow text-black font-mono text-[9px] font-bold px-2 py-1 rounded-full flex items-center gap-1">
-            <span className="w-1.5 h-1.5 bg-black rounded-full animate-pulse" />
+          <div className="absolute top-3 right-3 bg-yellow text-black font-mono text-[9px] font-bold px-2 py-1 rounded-full flex items-center gap-1 animate-pulse [animation-duration:2.5s]">
+            <span className="w-1.5 h-1.5 bg-black rounded-full" />
             RECORDING
           </div>
         )}
@@ -95,7 +95,9 @@ export default function BookCard({ book }: BookCardProps) {
         <p className="font-body font-bold text-cream text-sm truncate">{book.title}</p>
         <p className="font-body text-warm-gray text-xs">{book.author}</p>
         <div className="flex items-center gap-2 mt-2">
-          <span className="font-mono text-[10px] bg-yellow/10 text-yellow px-2 py-0.5 rounded-full">{book.genre}</span>
+          {book.genre.map(g => (
+            <span key={g} className="font-mono text-[10px] bg-yellow/10 text-yellow px-2 py-0.5 rounded-full">{g}</span>
+          ))}
           <span className="font-mono text-[10px] text-warm-gray/60">{book.runtime}</span>
         </div>
       </div>
